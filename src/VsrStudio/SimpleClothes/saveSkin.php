@@ -1,6 +1,6 @@
 <?php
 
-namespace CustomWing;
+namespace VsrStudio\SimpleClothes;
 
 use pocketmine\entity\Skin;
 
