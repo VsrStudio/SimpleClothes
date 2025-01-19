@@ -1,6 +1,6 @@
 <?php
 
-namespace CustomWing;
+namespace VsrStudio\SimpleClothes;
 
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -19,7 +19,7 @@ use pocketmine\network\mcpe\JwtException;
 use pocketmine\network\PacketHandlingException;
 use pocketmine\network\mcpe\protocol\types\login\ClientData;
 use pocketmine\plugin\PluginBase;
-use jojoe77777\FormAPI\SimpleForm;
+use VsrStudio\SimpleClothes\Form\SimpleForm;
 use pocketmine\utils\Config;
 use pocketmine\utils\TextFormat;
 
