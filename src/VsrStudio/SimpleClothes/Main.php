@@ -410,10 +410,10 @@ class Main extends PluginBase implements Listener {
 			}
 			switch($result) {
 			case 0;
-			if($sender->hasPermission("demon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+			if($sender->hasPermission("combopk.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "demon");
+    			    $setskin->setSkin($sender, "combopk");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
@@ -475,19 +475,19 @@ class Main extends PluginBase implements Listener {
     		}
     		switch($data){
     			case 0:
-    			if($sender->hasPermission("kagune.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("postland.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "kagune");
+    			    $setskin->setSkin($sender, "postland");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 1:
-    			if($sender->hasPermission("kakuja.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("raiden.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "kakuja");
+    			    $setskin->setSkin($sender, "raiden");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
@@ -500,10 +500,10 @@ class Main extends PluginBase implements Listener {
     		}
             return false;
     	});
-    	$form->setTitle(TextFormat::RED . "Custom" . TextFormat::WHITE . "Wing");
+    	$form->setTitle("GenshinImpact Skin");
     	$form->setContent("Select Genshin Impanct Skin");
-    	$form->addButton("§cKagune §4Kaneki");
-    	$form->addButton("§0Kakuja §4Kaneki");
+    	$form->addButton("§bPostLand");
+    	$form->addButton("§bRaiden Shogun");
     	$form->addButton("Reset Skin");
     	$form->addButton("Exit");
     	$form->sendToPlayer($sender);
