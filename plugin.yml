@@ -1,0 +1,14 @@
+name: CustomWing
+api: 5.0.0
+version: 2.0 - Animated
+main: CustomWing\Main
+author: Fazz Remake By RemyyPlayzz
+description: §b§lCustomWings Animated 
+commands:
+  customwing:
+    description: "§b» §eCustomWing Animated"
+    permission: customwing.use
+    aliases: [cw, wings]
+permissions:
+  customwing.use:
+    default: true
