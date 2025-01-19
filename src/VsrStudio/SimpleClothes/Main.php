@@ -191,7 +191,7 @@ class Main extends PluginBase implements Listener {
         $form->setContent($txt);
         $form->addButton("§0Remove your Cape", 0,"textures/ui/icon_trash");
         $form->addButton("§eChoose a Cape", 0,"textures/ui/dressing_room_capes");
-	$form->addButton("Back", 0,"textures/ui/arrow_left");
+	$form->addButton("Back Menu", 0,"textures/ui/arrow_left");
         $form->sendToPlayer($player);
     }
                         
@@ -375,25 +375,72 @@ class Main extends PluginBase implements Listener {
     			  }
     			break;
 			case 8:
-    			  $this->resetSkin($sender);
+    			$this->resetSkin($sender);
     			break;
-			case 9:
-    			break;
+			case 9;
+			$this->MenuForm($player);
+			break;
+			case 10;
+			break;
     		}
             return false;
     	});
     	$form->setTitle(TextFormat::RED . "Custom" . TextFormat::WHITE . "Wing");
     	$form->setContent($txt);
     	$form->addButton("§l§eCombo Wings§r\nClick to open");
-    	$form->addButton("§0Kakuja §4Kaneki");
-    	$form->addButton("§6Mercy §awing");
-    	$form->addButton("§cBalrog §awing");
-    	$form->addButton("§eBlazing §fElectro §awing");
-    	$form->addButton("§2Poison§5Dragon §awing");
+    	$form->addButton("§bDemon §awing");
+    	$form->addButton("§bPhoenix §awing");
+    	$form->addButton("§bSunset §awing");
+    	$form->addButton("§bFallenAngel §awing");
+    	$form->addButton("§bAquaTentacle §awing");
+	$form->addButton("§bAquaDragon §awing");
+    	$form->addButton("§bButterFly §awing");
     	$form->addButton("Reset Skin");
+	form->addButton("Back Menu", 0,"textures/ui/arrow_left");
     	$form->addButton("Exit");
     	$form->sendToPlayer($sender);
     	return $form;
+    }
+
+    public function ComboForm($player) {
+		$form = new SimpleForm(function(Player $player, $data = null) {
+			$result = $data;
+			if(is_null($result)) {
+				return true;
+			}
+			switch($result) {
+			case 0;
+			if($sender->hasPermission("demon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($sender, "demon");
+    			  } else {
+    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+			case 1;
+			if($sender->hasPermission("demon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($sender, "demon");
+    			  } else {
+    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+			case 2;
+			$this->WForm($player);
+			break;
+			case 3;
+			break;
+			}
+		});
+		$form->setTitle("§eClothesMenu");
+		$form->setContent("Select combo wing");
+		$form->addButton("§eGolden");
+		$form->addButton("§eBlue");
+	        $form->addButton("Back Wing", 0,"textures/ui/arrow_left");
+		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
+		$form->sendToPlayer($player);
     }
     
     public function resetSkin(Player $player){
