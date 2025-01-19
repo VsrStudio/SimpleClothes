@@ -491,42 +491,47 @@ class Main extends PluginBase implements Listener {
     	return $form;
     }
     
-    public function checkRequirement(){
-      if(!extension_loaded("gd")){
+    public function checkRequirement() {
+    if (!extension_loaded("gd")) {
         $this->getServer()->getLogger()->info("§6Clothes: Uncomment gd2.dll (remove symbol ';' in ';extension=php_gd2.dll') in bin/php/php.ini to make the plugin working");
         $this->getServer()->getPluginManager()->disablePlugin($this);
-      }
-      if(!class_exists(SimpleForm::class)){
-        $this->getServer()->getLogger()->info("§6Clothes: FormAPI class missing,pls use .phar from poggit!");
+        return;
+    }
+
+    if (!class_exists(SimpleForm::class)) {
+        $this->getServer()->getLogger()->info("§6Clothes: FormAPI class missing, please use .phar from poggit!");
         $this->getServer()->getPluginManager()->disablePlugin($this);
         return;
-      }
-      if (!file_exists($this->getDataFolder() . "steve.png") || !file_exists($this->getDataFolder() . "steve.json") || !file_exists($this->getDataFolder() . "config.yml")) {
-            if (file_exists(str_replace("config.yml", "", $this->getResources()["config.yml"]))) {
-                $this->recurse_copy(str_replace("config.yml", "", $this->getResources()["config.yml"]), $this->getDataFolder());
-            } else {
-                $this->getServer()->getLogger()->info("§6Clothes: Something wrong with the resources");
-                $this->getServer()->getPluginManager()->disablePlugin($this);
-                return;
-            }
-      }
     }
-    
-    public function recurse_copy($src, $dst)
-    {
-        $dir = opendir($src);
-        @mkdir($dst);
-        while (false !== ($file = readdir($dir))) {
-            if (($file != '.') && ($file != '..')) {
-                if (is_dir($src . '/' . $file)) {
-                    $this->recurse_copy($src . '/' . $file, $dst . '/' . $file);
-                } else {
-                    copy($src . '/' . $file, $dst . '/' . $file);
-                }
+
+    if (!file_exists($this->getDataFolder() . "steve.png") || !file_exists($this->getDataFolder() . "steve.json") || !file_exists($this->getDataFolder() . "config.yml")) {
+        $resources = $this->getResources();
+        if (isset($resources["config.yml"]) && $resources["config.yml"] instanceof \SplFileInfo) {
+            $configPath = $resources["config.yml"]->getPathname();
+            $basePath = dirname($configPath);
+            $this->recurse_copy($basePath, $this->getDataFolder());
+        } else {
+            $this->getServer()->getLogger()->info("§6Clothes: Something wrong with the resources");
+            $this->getServer()->getPluginManager()->disablePlugin($this);
+            return;
+        }
+    }
+}
+
+public function recurse_copy($src, $dst) {
+    $dir = opendir($src);
+    @mkdir($dst);
+    while (($file = readdir($dir)) !== false) {
+        if ($file !== '.' && $file !== '..') {
+            if (is_dir($src . '/' . $file)) {
+                $this->recurse_copy($src . '/' . $file, $dst . '/' . $file);
+            } else {
+                copy($src . '/' . $file, $dst . '/' . $file);
             }
         }
-        closedir($dir);
     }
+    closedir($dir);
+}
 
     public static function decodeClientData(string $clientDataJwt): ClientData{
         try{
