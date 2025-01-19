@@ -1,14 +1,14 @@
-name: CustomWing
+name: SimpleClothes
 api: 5.0.0
-version: 2.0 - Animated
-main: CustomWing\Main
-author: Fazz Remake By RemyyPlayzz
-description: §b§lCustomWings Animated 
+version: 1.0.0
+main: VsrStudio\SimpleClothes\Main
+author: VsrStudio
+description: §l§bVsrSimpleClothes
 commands:
-  customwing:
-    description: "§b» §eCustomWing Animated"
-    permission: customwing.use
-    aliases: [cw, wings]
+  simpleclothes:
+    description: "§bOpen SimpleClothes"
+    permission: simpleclothes.use
+    aliases: [sc, clothes]
 permissions:
-  customwing.use:
+  simpleclothes.use:
     default: true
