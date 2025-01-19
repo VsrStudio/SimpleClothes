@@ -142,6 +142,8 @@ class Main extends PluginBase implements Listener {
 				case 2;
 				$this->openCapesUI($player, "Select your capes");
 				break;
+				case 3;
+				break;
 			}
 		});
 		$form->setTitle("§eClothesMenu");
@@ -150,6 +152,7 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("§eGensinImpact Skin\nClick to open", 0,"textures/ui/dressing_room_skins.png");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
         $form->addButton("§eHats\n§rClick to open", 0,);
+		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
 	}
 
@@ -179,13 +182,16 @@ class Main extends PluginBase implements Listener {
                 case 1:
                     $this->openCapeListUI($player);
                     break;
+		case 2;
+		    $this->MenuForm($player);
             }
         });
 
         $form->setTitle("CapesMenu");
         $form->setContent($txt);
-        $form->addButton("§0Remove your Cape", 1);
+        $form->addButton("§0Remove your Cape", 0,"textures/ui/icon_trash");
         $form->addButton("§eChoose a Cape", 0,"textures/ui/dressing_room_capes");
+	$form->addButton("Back", 0,"textures/ui/arrow_left");
         $form->sendToPlayer($player);
     }
                         
