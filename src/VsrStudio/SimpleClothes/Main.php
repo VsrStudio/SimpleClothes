@@ -101,8 +101,8 @@ class Main extends PluginBase implements Listener {
 	
 	public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
 		if($sender instanceof Player){
-			if($cmd->getName() == "customwing"){
-				$this->MenuForm($sender, TextFormat::YELLOW . "Select Your Wings:");
+			if($cmd->getName() == "simpleclothes"){
+				$this->MenuForm($sender, TextFormat::YELLOW . "Select Your Clothes:");
 				return true;
 			}
 		} else {
@@ -126,7 +126,7 @@ class Main extends PluginBase implements Listener {
 				$this->CSForm($player, "Select your skin");
 				break;
 				case 2;
-				$this->openCapesUI($player, "Select your hats");
+				$this->openCapesUI($player, "Select your capes");
 				break;
 			}
 		});
