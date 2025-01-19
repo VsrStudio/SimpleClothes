@@ -182,8 +182,8 @@ class Main extends PluginBase implements Listener {
             }
         });
 
-        $form->setTitle($this->cfg->get("UI-Title"));
-        $form->setContent($this->cfg->get("UI-Content"));
+        $form->setTitle("CapesMenu");
+        $form->setContent($txt);
         $form->addButton("§0Remove your Cape", 1);
         $form->addButton("§eChoose a Cape", 2);
         $form->sendToPlayer($player);
@@ -240,8 +240,8 @@ class Main extends PluginBase implements Listener {
             }
         });
 
-        $form->setTitle($this->cfg->get("UI-Title"));
-        $form->setContent($this->cfg->get("UI-Content"));
+        $form->setTitle("Capes");
+        $form->setContent("Select your capes");
         foreach($this->getCapes() as $capes) {
             $form->addButton("$capes", -1, "", $capes);
         }
