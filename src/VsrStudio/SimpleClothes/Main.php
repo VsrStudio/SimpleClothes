@@ -163,8 +163,6 @@ class Main extends PluginBase implements Listener {
 
             switch($result) {
                 case 0:
-                    break;
-                case 1:
                     $oldSkin = $player->getSkin();
                     $setCape = new Skin($oldSkin->getSkinId(), $oldSkin->getSkinData(), "", $oldSkin->getGeometryName(), $oldSkin->getGeometryData());
                     
@@ -178,7 +176,7 @@ class Main extends PluginBase implements Listener {
                     
                     $player->sendMessage($this->cfg->get("skin-resetted"));
                     break;
-                case 2:
+                case 1:
                     $this->openCapeListUI($player);
                     break;
             }
@@ -186,7 +184,6 @@ class Main extends PluginBase implements Listener {
 
         $form->setTitle($this->cfg->get("UI-Title"));
         $form->setContent($this->cfg->get("UI-Content"));
-        $form->addButton("§4Abort", 0);
         $form->addButton("§0Remove your Cape", 1);
         $form->addButton("§eChoose a Cape", 2);
         $form->sendToPlayer($player);
