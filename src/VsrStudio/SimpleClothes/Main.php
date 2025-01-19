@@ -434,7 +434,7 @@ class Main extends PluginBase implements Listener {
 			break;
 			}
 		});
-		$form->setTitle("§eClothesMenu");
+		$form->setTitle("§eComboForm");
 		$form->setContent("Select combo wing");
 		$form->addButton("§eGolden");
 		$form->addButton("§eBlue");
@@ -492,58 +492,18 @@ class Main extends PluginBase implements Listener {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
-    			case 2:
-    			if($sender->hasPermission("mercy.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "mercy");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
-    			break;
-    			case 3:
-    			if($sender->hasPermission("balrog.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "balrog");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
-    			break;
-    			case 4:
-    			if($sender->hasPermission("blazingelectro.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "blazingelectro");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-			}
-			break;
-			case 5:
-    			if($sender->hasPermission("poisondragon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "PoisonDragon");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
-    			break;
-			case 6:
+			case 3:
     			  $this->resetSkin($sender);
     			break;
-			case 7:
+			case 4:
     			break;
     		}
             return false;
     	});
     	$form->setTitle(TextFormat::RED . "Custom" . TextFormat::WHITE . "Wing");
-    	$form->setContent($txt);
+    	$form->setContent("Select Genshin Impanct Skin");
     	$form->addButton("§cKagune §4Kaneki");
     	$form->addButton("§0Kakuja §4Kaneki");
-    	$form->addButton("§6Mercy §awing");
-    	$form->addButton("§cBalrog §awing");
-    	$form->addButton("§eBlazing §fElectro §awing");
-    	$form->addButton("§2Poison§5Dragon §awing");
     	$form->addButton("Reset Skin");
     	$form->addButton("Exit");
     	$form->sendToPlayer($sender);
