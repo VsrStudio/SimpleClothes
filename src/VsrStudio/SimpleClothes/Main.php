@@ -1,5 +1,20 @@
 <?php
 
+
+/*
+*
+*__     __        ____  _             _ _       
+*\ \   / /__ _ __/ ___|| |_ _   _  __| (_) ___  
+* \ \ / / __| '__\___ \| __| | | |/ _` | |/ _ \ 
+*  \ V /\__ \ |   ___) | |_| |_| | (_| | | (_) |
+*   \_/ |___/_|  |____/ \__|\__,_|\__,_|_|\___/ 
+*
+* This plugin was created by VsrStudio
+* Warning Not To Sell Plugins Or Change Author
+*/
+
+declare(strict_types=1);
+
 namespace VsrStudio\SimpleClothes;
 
 use pocketmine\command\Command;
