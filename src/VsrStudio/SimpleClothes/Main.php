@@ -144,12 +144,12 @@ class Main extends PluginBase implements Listener {
 				break;
 			}
 		});
-		$form->setTitle("§eCosmaticMenu");
+		$form->setTitle("§eClothesMenu");
 		$form->setContent("Select your clothes");
-		$form->addButton("§eWings");
-		$form->addButton("§eGensinImpact Skin");
-		$form->addButton("§eCapes");
-        $form->addButton("§eHats\n§rClick to open", 0,"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQLgpcojdh0iyaMAnuIQDW61XV7ABo7mY1kw&usqp=CAU");
+		$form->addButton("§eWings\nClick to open", 0,"textures/items/broken_elytra.png");
+		$form->addButton("§eGensinImpact Skin\nClick to open", 0,"textures/ui/dressing_room_skins.png");
+		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
+        $form->addButton("§eHats\n§rClick to open", 0,);
 		$form->sendToPlayer($player);
 	}
 
@@ -185,7 +185,7 @@ class Main extends PluginBase implements Listener {
         $form->setTitle("CapesMenu");
         $form->setContent($txt);
         $form->addButton("§0Remove your Cape", 1);
-        $form->addButton("§eChoose a Cape", 2);
+        $form->addButton("§eChoose a Cape", 0,"textures/ui/dressing_room_capes");
         $form->sendToPlayer($player);
     }
                         
@@ -312,7 +312,7 @@ class Main extends PluginBase implements Listener {
     			  }
     			break;
     			case 1:
-    			if($sender->hasPermission("kakuja.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("aquatentacle.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "kakuja");
