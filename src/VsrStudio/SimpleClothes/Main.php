@@ -151,7 +151,7 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("§eWings\nClick to open", 0,"textures/items/broken_elytra.png");
 		$form->addButton("§eGensinImpact Skin\nClick to open", 0,"textures/ui/dressing_room_skins.png");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
-        $form->addButton("§eHats\n§rClick to open", 0,);
+        $form->addButton("§eHats\n§rClick to open", 0,"https://i.imgur.com/pgrzKO7.png");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
 	}
@@ -309,70 +309,82 @@ class Main extends PluginBase implements Listener {
     		}
     		switch($data){
     			case 0:
-    			if($sender->hasPermission("kagune.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "kagune");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
+    			$this->ComboForm($player);
     			break;
     			case 1:
-    			if($sender->hasPermission("aquatentacle.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("demon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "kakuja");
+    			    $setskin->setSkin($sender, "demon");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 2:
-    			if($sender->hasPermission("mercy.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("phoenix.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "mercy");
+    			    $setskin->setSkin($sender, "phoenix");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 3:
-    			if($sender->hasPermission("balrog.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("sunset.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "balrog");
+    			    $setskin->setSkin($sender, "sunset");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 4:
-    			if($sender->hasPermission("blazingelectro.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("fallenangel.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "blazingelectro");
+    			    $setskin->setSkin($sender, "fallenangel");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
 			}
 			break;
 			case 5:
-    			if($sender->hasPermission("poisondragon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    			if($sender->hasPermission("aquatentacle.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
 
     			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "PoisonDragon");
+    			    $setskin->setSkin($sender, "aquatentacle");
     			  } else {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
 			case 6:
-    			  $this->resetSkin($sender);
+    			if($sender->hasPermission("aquadragon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($sender, "aquadragon");
+    			  } else {
+    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
     			break;
 			case 7:
+    			if($sender->hasPermission("butterfly.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($sender, "butterfly");
+    			  } else {
+    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+    			break;
+			case 8:
+    			  $this->resetSkin($sender);
+    			break;
+			case 9:
     			break;
     		}
             return false;
     	});
     	$form->setTitle(TextFormat::RED . "Custom" . TextFormat::WHITE . "Wing");
     	$form->setContent($txt);
-    	$form->addButton("§cKagune §4Kaneki");
+    	$form->addButton("§l§eCombo Wings§r\nClick to open");
     	$form->addButton("§0Kakuja §4Kaneki");
     	$form->addButton("§6Mercy §awing");
     	$form->addButton("§cBalrog §awing");
