@@ -148,8 +148,8 @@ class Main extends PluginBase implements Listener {
 		});
 		$form->setTitle("§eClothesMenu");
 		$form->setContent("Select your clothes");
-		$form->addButton("§eWings\nClick to open", 0,"textures/items/broken_elytra.png");
-		$form->addButton("§eGensinImpact Skin\nClick to open", 0,"textures/ui/dressing_room_skins.png");
+		$form->addButton("§eWings\n§rClick to open", 0,"textures/items/broken_elytra.png");
+		$form->addButton("§eGensinImpact Skin\n§rClick to open", 0,"textures/ui/dressing_room_skins.png");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
         $form->addButton("§eHats\n§rClick to open", 1,"https://i.imgur.com/pgrzKO7.png");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
@@ -485,13 +485,14 @@ class Main extends PluginBase implements Listener {
     			  }
     			break;
 			case 1:
-    				if($p->hasPermission("postland.skin")){
-    					$p->setSkin(new Skin($p->getSkin()->getSkinId(), base64_decode(file_get_contents($this->getDataFolder()."postland.png")), "", "geometry.postland", file_get_contents($this->getDataFolder()."postland.json")));
-          				$p->sendSkin();
-          				$p->sendMessage("§aSuccesfully Changed a Skin §r§f"."komodo".".");
-    				} else {
-    					$p->sendMessage("§cYou Do not have permission");
-    				}
+                    if ($p->hasPermission("postland.skin")) {
+                        $p->setSkin(new Skin($p->getSkin()->getSkinId(), $this->encodeSkin($this->getDataFolder() . "postland.png"), "", "geometry.postland", file_get_contents($this->getDataFolder() . "postland.json")));
+                        $p->sendSkin();
+                        $p->sendMessage("§aSuccessfully changed to skin");
+                    } else {
+                        $p->sendMessage("§cYou do not have permission.");
+                    }
+			break;
 			case 2:
     			  $this->resetSkin($sender);
     			break;
