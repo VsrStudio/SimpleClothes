@@ -485,8 +485,8 @@ class Main extends PluginBase implements Listener {
     			  }
     			break;
 			case 1:
-    				if($p->hasPermission("betas.skin")){
-    					$p->setSkin(new Skin($p->getSkin()->getSkinId(), base64_decode(file_get_contents($this->getDataFolder()."betas.png")), "", "geometry.betas", file_get_contents($this->getDataFolder()."betas.geo.json")));
+    				if($p->hasPermission("postland.skin")){
+    					$p->setSkin(new Skin($p->getSkin()->getSkinId(), base64_decode(file_get_contents($this->getDataFolder()."postland.png")), "", "geometry.postland", file_get_contents($this->getDataFolder()."postland.json")));
           				$p->sendSkin();
           				$p->sendMessage("§aSuccesfully Changed a Skin §r§f"."komodo".".");
     				} else {
