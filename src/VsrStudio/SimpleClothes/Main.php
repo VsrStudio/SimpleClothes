@@ -484,19 +484,18 @@ class Main extends PluginBase implements Listener {
     			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
-    			case 1:
-    			if($sender->hasPermission("raiden.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
-
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "raiden");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
-    			break;
-			case 3:
+			case 1:
+    				if($p->hasPermission("betas.skin")){
+    					$p->setSkin(new Skin($p->getSkin()->getSkinId(), base64_decode(file_get_contents($this->getDataFolder()."betas.png")), "", "geometry.betas", file_get_contents($this->getDataFolder()."betas.geo.json")));
+          				$p->sendSkin();
+          				$p->sendMessage("§aSuccesfully Changed a Skin §r§f"."komodo".".");
+    				} else {
+    					$p->sendMessage("§cYou Do not have permission");
+    				}
+			case 2:
     			  $this->resetSkin($sender);
     			break;
-			case 4:
+			case 3:
     			break;
     		}
             return false;
@@ -509,6 +508,24 @@ class Main extends PluginBase implements Listener {
     	$form->addButton("Exit");
     	$form->sendToPlayer($sender);
     	return $form;
+    }
+
+    public function encodeSkin(string $path): string {
+        $size = getimagesize($path);
+        $img = @imagecreatefrompng($path);
+        $skinbytes = "";
+        for ($y = 0; $y < $size[1]; $y++) {
+            for ($x = 0; $x < $size[0]; $x++) {
+                $colorat = @imagecolorat($img, $x, $y);
+                $a = ((~((int)($colorat >> 24))) << 1) & 0xff;
+                $r = ($colorat >> 16) & 0xff;
+                $g = ($colorat >> 8) & 0xff;
+                $b = $colorat & 0xff;
+                $skinbytes .= chr($r) . chr($g) . chr($b) . chr($a);
+            }
+        }
+        @imagedestroy($img);
+        return $skinbytes;
     }
     
     public function checkRequirement() {
