@@ -470,49 +470,55 @@ class Main extends PluginBase implements Listener {
       $Available = [];
     }
 
-    public function CSForm($sender) {
-    	$form = new SimpleForm(function (Player $sender, $data = null){
-    		if($data === null){
-    			return false;
-    		}
-    		switch($data){
-    			case 0:
-    			if($sender->hasPermission("postland.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    public function checkAvailableSkins(){
+		if(!file_exists($this->getDataFolder()."skin4d")) {
+            mkdir($this->getDataFolder()."skin4d");
+        }
 
-    			    $setskin = new setSkin();
-    			    $setskin->setSkin($sender, "postland");
-    			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
-    			  }
-    			break;
-			case 1:
-                    if ($p->hasPermission("postland.skin")) {
-                        $p->setSkin(new Skin($p->getSkin()->getSkinId(), $this->encodeSkin($this->getDataFolder() . "postland.png"), "", "geometry.postland", file_get_contents($this->getDataFolder() . "postland.json")));
-                        $p->sendSkin();
-                        $p->sendMessage("§aSuccessfully changed to skin");
-                    } else {
-                        $p->sendMessage("§cYou do not have permission.");
-                    }
-			break;
-			case 2:
-    			  $this->resetSkin($sender);
-    			break;
-			case 3:
-    			break;
-    		}
-            return false;
-    	});
-    	$form->setTitle("GenshinImpact Skin");
-    	$form->setContent("Select Genshin Impanct Skin");
-    	$form->addButton("§bPostLand");
-    	$form->addButton("§bRaiden Shogun");
-    	$form->addButton("Reset Skin");
-    	$form->addButton("Exit");
-    	$form->sendToPlayer($sender);
-    	return $form;
+        $list = scandir($this->getDataFolder()."skin4d");
+        $result = [];
+        foreach($list as $value) {
+            if(strpos($value, ".png")) {
+                array_push($result, str_replace('.png', '', $value));
+            }
+        }
+        foreach($result as $value) {
+			if(!in_array($value.".json", $list)) {
+				unset($result[array_search($value, $result)]);
+			}
+		}
+        sort($result);
+        $result[] = "none";
+        foreach($result as $res){
+            $this->getLogger()->info($res);
+        }
+
+        self::$skins = $result;
     }
 
-    public function encodeSkin(string $path): string {
+
+    public function checkSkinGenshin(){
+      $Available = [];
+      if(!file_exists($this->getDataFolder() . "saveskin")){
+        mkdir($this->getDataFolder() . "saveskin");
+      }
+      $path = $this->getDataFolder() . "saveskin/";
+      $allskin = scandir($path);
+      foreach($allskin as $file){
+          array_push($Available, preg_replace("/.json/", "", $file));
+      }
+      foreach($Available as $value){
+        if(!in_array($value . ".png", $allskin)){
+          unset($Available[array_search($value, $Available)]);
+        }
+      }
+      $this->json = count($Available);
+      $Available = [];
+    }
+
+    public function createSkins($skinName)
+    {
+        $path = $this->getDataFolder() . "skin4d/{$skinName}.png";
         $size = getimagesize($path);
         $img = @imagecreatefrompng($path);
         $skinbytes = "";
@@ -525,9 +531,88 @@ class Main extends PluginBase implements Listener {
                 $b = $colorat & 0xff;
                 $skinbytes .= chr($r) . chr($g) . chr($b) . chr($a);
             }
-        }
+    }
         @imagedestroy($img);
-        return $skinbytes;
+    return $skinbytes;
+    }
+	
+    public function skinForm(Player $p){
+      
+        $form = new SimpleForm(function (Player $p, int $data = null) {
+            $result = $data;
+            if($result === null){
+                return true;
+            }
+            $value = Loader::$skins[$result];
+            if ($value === "none") {
+                // Reset to the original skin
+                $originalSkin = $this->skin[$p->getName()] ?? $p->getSkin();
+                $p->setSkin($originalSkin);
+                $p->sendSkin();
+                $p->sendMessage(TextFormat::GREEN . "Skin reset to original.");
+            } else {
+                $geometryName = $this->getGeometryNameFromJSON($this->getDataFolder() . "skin4d/{$value}.json");
+            if ($geometryName === null) {
+                $p->sendMessage(TextFormat::RED . "Geometry data not found for: " . $value);
+                return false;
+            }
+            $p->setSkin(new Skin($p->getSkin()->getSkinId(), $this->createSkins($value), "", $geometryName, $this->getGeometryData($value)));
+            
+                /**8if(array_key_exists($result,Loader::$skins)){
+                   $p->setSkin(new Skin($p->getSkin()->getSkinId(), $this->createSkins(Loader::$skins[$result]), "", $p->getSkin()->getGeometryName(), $this->getGeometryData($geometryName)));*/
+                   $p->sendSkin();
+                   $p->sendMessage(TextFormat::GREEN."Succesfully Changed a Skin §r§f". " ".$value);
+               /** }*/
+            }
+
+            return true;
+        });
+        $skins = 0;
+        $form->setTitle("GensinImpactSkin");
+        if(Loader::$skins != []){
+            foreach (Loader::$skins as $values) {
+                    $form->addButton($values);
+                    $skins++;
+            }
+        }
+        $form->addButton("§cClose", 0, "textures/blocks/barrier");
+        $form->sendToPlayer($p);
+        return $form;
+    }
+
+    private function getGeometryNameFromJSON(string $geometryPath): ?string {
+    if (!file_exists($geometryPath)) {
+        $this->getLogger()->error("Geometry file not found: " . $geometryPath);
+        return null;
+    }
+
+    $data = file_get_contents($geometryPath);
+    if ($data === false) {
+        $this->getLogger()->error("Failed to read geometry file: " . $geometryPath);
+        return null;
+    }
+
+    $json = json_decode($data, true);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+        $this->getLogger()->error("Failed to decode JSON: " . json_last_error_msg());
+        return null;
+    }
+
+    if (isset($json['minecraft:geometry'][0]['description']['identifier'])) {
+        return $json['minecraft:geometry'][0]['description']['identifier'];
+    }
+
+    $this->getLogger()->error("Geometry identifier not found in JSON.");
+    return null;
+}
+
+    private function getGeometryData(string $geometryName): ?string {
+        $geometryPath = $this->getDataFolder() . "skin4d/" . $geometryName . ".json";
+        if (!file_exists($geometryPath)) {
+            return null;
+        }
+
+        return file_get_contents($geometryPath);
     }
     
     public function checkRequirement() {
