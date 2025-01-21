@@ -58,6 +58,7 @@ class Main extends PluginBase implements Listener {
         $this->pdata = new Config($this->getDataFolder() . "data.yml", Config::YAML);
     	$this->checkSkin();
     	$this->checkRequirement();
+	$this->checkAvailableSkins();
     	$this->getLogger()->info($this->json . " Geometry Skin Confirmed");
 	
 	if(is_array($this->cfg->get("standard_capes"))) {
