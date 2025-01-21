@@ -536,7 +536,7 @@ class Main extends PluginBase implements Listener {
     return $skinbytes;
     }
 	
-    public function skinForm(Player $p){
+    public function CSForm(Player $p){
       
         $form = new SimpleForm(function (Player $p, int $data = null) {
             $result = $data;
