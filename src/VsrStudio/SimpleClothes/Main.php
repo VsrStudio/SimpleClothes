@@ -446,6 +446,47 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
     }
+
+    public function HatsForm($player) {
+		$form = new SimpleForm(function(Player $player, $data = null) {
+			$result = $data;
+			if(is_null($result)) {
+				return true;
+			}
+			switch($result) {
+			case 0;
+			if($player->hasPermission("combopk.wing") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($player, "combopk");
+    			  } else {
+    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+			case 1;
+			if($player->hasPermission("demon.wing") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($player, "demon");
+    			  } else {
+    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+			case 2;
+			$this->WForm($player);
+			break;
+			case 3;
+			break;
+			}
+		});
+		$form->setTitle("§eHats");
+		$form->setContent("Select your hats");
+		$form->addButton("§eGolden");
+		$form->addButton("§eBlue");
+	        $form->addButton("Back Wing", 0,"textures/ui/arrow_left");
+		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
+		$form->sendToPlayer($player);
+    }
     
     public function resetSkin(Player $player){
       $player->sendMessage("Reset To Original Skin Successfully");
