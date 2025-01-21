@@ -147,6 +147,9 @@ class Main extends PluginBase implements Listener {
 				$this->openCapesUI($player, "Select your capes");
 				break;
 				case 3;
+				$this->HatsForm($player);
+				break;
+				case 4;
 				break;
 			}
 		});
@@ -155,7 +158,7 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("§eWings\n§rClick to open", 0,"textures/items/broken_elytra.png");
 		$form->addButton("§eGensinImpact Skin\n§rClick to open", 0,"textures/ui/dressing_room_skins.png");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
-        $form->addButton("§eHats\n§rClick to open", 1,"https://i.imgur.com/pgrzKO7.png");
+        $form->addButton("§eHats\n§rClick to open", 0,"textures/persona_thumbnails/alex_hair_thumbnail_0.png");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
 	}
@@ -321,7 +324,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "demon");
     			  } else {
-    			    $this->PForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 2:
@@ -407,7 +410,7 @@ class Main extends PluginBase implements Listener {
     	return $form;
     }
     
-    public function PForm($player) {
+    public function Form($player) {
     $form = new ModalForm(function (Player $sender, ?bool $data) {
     });
 
@@ -466,6 +469,61 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("§eBlue");
         $form->addButton("§eGolden Blue");
 	        $form->addButton("Back Wing", 0,"textures/ui/arrow_left");
+		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
+		$form->sendToPlayer($player);
+    }
+
+    public function HatsForm($player) {
+		$form = new SimpleForm(function(Player $player, $data = null) {
+			$result = $data;
+			if(is_null($result)) {
+				return true;
+			}
+			switch($result) {
+			case 0;
+			if($player->hasPermission("tv.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($player, "tv");
+    			  } else {
+    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+			case 1;
+			if($player->hasPermission("frog.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($player, "frog");
+    			  } else {
+    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+			break;
+                        case 2;
+			if($player->hasPermission("melon.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+
+    			    $setskin = new setSkin();
+    			    $setskin->setSkin($player, "melon");
+    			  } else {
+    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			  }
+                        break;
+			case 3;
+    			$this->resetSkin($sender);
+    			break;
+			case 4 ;
+			$this->MenuForm($player);
+			break;
+			case 5;
+			break;
+			}
+		});
+		$form->setTitle("§eHats");
+		$form->setContent("Select your hats");
+		$form->addButton("§rTv Hats");
+		$form->addButton("§rFrog Hats");
+                $form->addButton("§r Melon Hats");
+	        $form->addButton("Reset Skin");
+	        $form->addButton("Back Menu", 0,"textures/ui/arrow_left");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
     }
