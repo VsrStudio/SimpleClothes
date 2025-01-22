@@ -5,4 +5,5 @@ branches:
 projects:
   SimpleClothes:
     path: ""
+    icon: "icon.png"
 ...
