@@ -191,6 +191,7 @@ class Main extends PluginBase implements Listener {
                     break;
 		case 2:
 		    $this->MenuForm($player);
+		    break;
             }
         });
 
@@ -324,7 +325,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "demon");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
     			case 2:
@@ -333,7 +334,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "phoenix");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
     			case 3:
@@ -342,7 +343,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "sunset");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
     			case 4:
@@ -351,7 +352,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "fallenangel");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
 			}
 			break;
 			case 5:
@@ -360,7 +361,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "aquatentacle");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
 			case 6:
@@ -369,7 +370,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "aquadragon");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
 			case 7:
@@ -378,7 +379,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "butterfly");
     			  } else {
-    			    $this->Form($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
     			break;
 			case 8:
@@ -410,12 +411,12 @@ class Main extends PluginBase implements Listener {
     	return $form;
     }
     
-    public function Form($player, string $txt) {
+    public function Form($player) {
     $form = new ModalForm(function (Player $sender, ?bool $data) {
     });
 
     $form->setTitle("Permission Denied");
-    $form->setContent($txt);
+    $form->setContent("You Do Not Have Permission To Use This Skin");
     $form->setButton1("OK");
     $form->setButton2("Exit");
 
@@ -435,7 +436,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($player);
     			  }
 			break;
 			case 1;
@@ -444,7 +445,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk1");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($player);
     			  }
 			break;
             case 2;
@@ -453,7 +454,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk2");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($sender);
     			  }
             break;
 			case 3;
@@ -486,7 +487,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "tv");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($player);
     			  }
 			break;
 			case 1;
@@ -495,7 +496,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "frog");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($player);
     			  }
 			break;
                         case 2;
@@ -504,7 +505,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "melon");
     			  } else {
-    			    $this->Form($player, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->Form($player);
     			  }
                         break;
 			case 3;
