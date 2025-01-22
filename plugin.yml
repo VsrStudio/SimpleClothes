@@ -3,7 +3,8 @@ api: 5.0.0
 version: 1.0.0
 main: VsrStudio\SimpleClothes\Main
 author: VsrStudio
-description: §l§bVsrSimpleClothes
+description: §bThis VsrSimpleClothes Dont Sell Bro
+website: vsrstudio.web.id
 commands:
   simpleclothes:
     description: "§bOpen SimpleClothes"
