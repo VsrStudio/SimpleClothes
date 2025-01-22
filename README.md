@@ -1,6 +1,7 @@
 # SimpleClothes
 This plugin is a clothing plugin like cosmetics, you could say it's more perfect.
 - This plugin will continue to be developed.
+- Not for sale
 
 # Feature
 - Wings Form - Have 8 Skin
