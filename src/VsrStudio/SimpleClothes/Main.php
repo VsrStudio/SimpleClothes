@@ -120,7 +120,7 @@ class Main extends PluginBase implements Listener {
 	public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
 		if($sender instanceof Player){
 			if($cmd->getName() == "simpleclothes"){
-				$this->MenuForm($sender, TextFormat::YELLOW . "Select Your Clothes:");
+				$this->MenuForm($sender);
 				return true;
 			}
 		} else {
@@ -454,7 +454,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk2");
     			  } else {
-    			    $this->Form($sender);
+    			    $this->Form($player);
     			  }
             break;
 			case 3;
