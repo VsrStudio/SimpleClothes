@@ -416,7 +416,7 @@ class Main extends PluginBase implements Listener {
 
     $form->setTitle("Permission Denied");
     $form->setContent("You don't have permission to use this skin.");
-    $form->setButton1("OK");    // Tombol untuk melanjutkan
+    $form->setButton1("OK");
     $form->setButton2("Exit");
 
     $player->sendForm($form);
