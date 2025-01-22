@@ -416,8 +416,8 @@ class Main extends PluginBase implements Listener {
 
     $form->setTitle("Permission Denied");
     $form->setContent("You don't have permission to use this skin.");
-    $form->setButton1("OK");    // Tombol untuk melanjutkan
-    $form->setButton2("Exit"); // Tombol untuk keluar
+    $form->setButton1("OK");    
+    $form->setButton2("Exit");
 
     $player->sendForm($form);
 }
@@ -618,14 +618,13 @@ class Main extends PluginBase implements Listener {
         @imagedestroy($img);
     return $skinbytes;
     }
-	
+
     public function CSForm(Player $p) {
     $form = new SimpleForm(function (Player $p, int $data = null) {
         $result = $data;
         if ($result === null) {
             return true;
         }
-
         $value = self::$skins[$result];
         if ($value === "Reset Skin") {
             $originalSkin = $this->skin[$p->getName()] ?? $p->getSkin();
@@ -633,36 +632,19 @@ class Main extends PluginBase implements Listener {
             $p->sendSkin();
             $p->sendMessage(TextFormat::GREEN . "Skin reset to original.");
         } else {
-            if (
-                !$p->hasPermission("skin.use." . strtolower($value)) &&
-                !$p->hasPermission(DefaultPermissions::ROOT_OPERATOR)
-            ) {
-                $p->sendMessage(TextFormat::RED . "You don't have permission to use the skin: " . $value);
-                return false;
-            }
-
             $geometryName = $this->getGeometryNameFromJSON($this->getDataFolder() . "skingenshin/{$value}.json");
             if ($geometryName === null) {
                 $p->sendMessage(TextFormat::RED . "Geometry data not found for: " . $value);
                 return false;
             }
-
-            $p->setSkin(new Skin(
-                $p->getSkin()->getSkinId(),
-                $this->createSkins($value),
-                "",
-                $geometryName,
-                $this->getGeometryData($value)
-            ));
-
+            $p->setSkin(new Skin($p->getSkin()->getSkinId(), $this->createSkins($value), "", $geometryName, $this->getGeometryData($value)));
             $p->sendSkin();
             $p->sendMessage(TextFormat::GREEN . "Successfully changed to skin: " . $value);
         }
-
         return true;
     });
 
-    $form->setTitle("Genshin Impact Skin");
+    $form->setTitle("GensinImpactSkin");
     if (self::$skins !== []) {
         foreach (self::$skins as $values) {
             $form->addButton($values);
@@ -670,8 +652,8 @@ class Main extends PluginBase implements Listener {
     }
     $form->sendToPlayer($p);
     return $form;
-    }
-
+}
+    
             return true;
         });
         $skins = 0;
