@@ -137,28 +137,28 @@ class Main extends PluginBase implements Listener {
 				return true;
 			}
 			switch($result) {
-				case 0;
-				$this->WForm($player, "Select your wings");
+				case 0:
+				$this->WForm($player);
 				break;
-				case 1;
-				$this->CSForm($player, "Select your skin");
+				case 1:
+				$this->CSForm($player);
 				break;
-				case 2;
-				$this->openCapesUI($player, "Select your capes");
+				case 2:
+				$this->openCapesUI($player);
 				break;
-				case 3;
+				case 3:
 				$this->HatsForm($player);
 				break;
-				case 4;
+				case 4:
 				break;
 			}
 		});
 		$form->setTitle("§eClothesMenu");
 		$form->setContent("Select your clothes");
-		$form->addButton("§eWings\n§rClick to open", 0,"textures/items/broken_elytra.png");
-		$form->addButton("§eGensinImpact Skin\n§rClick to open", 0,"textures/ui/dressing_room_skins.png");
+		$form->addButton("§eWings\n§rClick to open", 0,"textures/items/broken_elytra");
+		$form->addButton("§eGensinImpact Skin\n§rClick to open", 0,"textures/ui/dressing_room_skins");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
-        $form->addButton("§eHats\n§rClick to open", 0,"textures/ui/dressing_room_customization.png");
+        $form->addButton("§eHats\n§rClick to open", 0,"textures/ui/dressing_room_customization");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
 	}
@@ -189,7 +189,7 @@ class Main extends PluginBase implements Listener {
                 case 1:
                     $this->openCapeListUI($player);
                     break;
-		case 2;
+		case 2:
 		    $this->MenuForm($player);
             }
         });
@@ -312,7 +312,7 @@ class Main extends PluginBase implements Listener {
     public function WForm($sender) {
     	$form = new SimpleForm(function (Player $sender, $data = null){
     		if($data === null){
-    			return false;
+    			return true;
     		}
     		switch($data){
     			case 0:
@@ -390,7 +390,7 @@ class Main extends PluginBase implements Listener {
 			case 10;
 			break;
     		}
-            return false;
+            return true;
     	});
     	$form->setTitle("Wings");
     	$form->setContent("Select your wing");
@@ -410,12 +410,12 @@ class Main extends PluginBase implements Listener {
     	return $form;
     }
     
-    public function Form($player) {
+    public function Form($player, string $txt) {
     $form = new ModalForm(function (Player $sender, ?bool $data) {
     });
 
     $form->setTitle("Permission Denied");
-    $form->setContent("You don't have permission to use this skin.");
+    $form->setContent($txt);
     $form->setButton1("OK");
     $form->setButton2("Exit");
 
