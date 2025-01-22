@@ -158,7 +158,7 @@ class Main extends PluginBase implements Listener {
 		$form->addButton("§eWings\n§rClick to open", 0,"textures/items/broken_elytra.png");
 		$form->addButton("§eGensinImpact Skin\n§rClick to open", 0,"textures/ui/dressing_room_skins.png");
 		$form->addButton("§eCapes\n§rClick to open", 0,"textures/ui/dressing_room_capes");
-        $form->addButton("§eHats\n§rClick to open", 0,"textures/ui/subcategory_icons/hair.png");
+        $form->addButton("§eHats\n§rClick to open", 0,"textures/ui/dressing_room_customization.png");
 		$form->addButton("Exit", 0,"textures/ui/realms_red_x");
 		$form->sendToPlayer($player);
 	}
