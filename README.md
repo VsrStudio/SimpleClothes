@@ -12,6 +12,6 @@ This plugin is a clothing plugin like cosmetics, you could say it's more perfect
 
 # In Game
 **MenuForm**
-![MENU](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-162652.png?token=GHSAT0AAAAAAC3HMPV6U4JGDGKTQKXBIV2QZ4QYVWA)
+![MENU](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-162652.png)
 **PermissionForm**
-![PFORM](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-163032.png?token=GHSAT0AAAAAAC3HMPV656YVFANQJ5I6SYUEZ4QYWAQ)
+![PFORM](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-163032.png)
