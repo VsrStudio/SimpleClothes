@@ -325,7 +325,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($sender, "demon");
     			  } else {
-    			    $this->Form($sender);
+    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
     			break;
     			case 2:
@@ -396,13 +396,41 @@ class Main extends PluginBase implements Listener {
     	$form->setTitle("Wings");
     	$form->setContent("Select your wing");
     	$form->addButton("§l§eCombo Wings§r\nClick to open");
-    	$form->addButton("§bDemon §awing");
-    	$form->addButton("§bPhoenix §awing");
-    	$form->addButton("§bSunset §awing");
-    	$form->addButton("§bFallenAngel §awing");
-    	$form->addButton("§bAquaTentacle §awing");
-	$form->addButton("§bAquaDragon §awing");
-    	$form->addButton("§bButterFly §awing");
+	if($sender->hasPermission("demon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dDemon §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dDemon §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+    	if($sender->hasPermission("phoenix.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dPhoenix §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dPhoenix §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+	if($sender->hasPermission("sunset.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dSunset §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dSunset §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+    	if($sender->hasPermission("fallenangel.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dFallenAngel §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dFallenAngel §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+	if($sender->hasPermission("aquatentacle.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dAquaTentacle §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dAquaTentacle §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+    	if($sender->hasPermission("aquadragon.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dAquaDragon §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dAquaDragon §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
+	if($sender->hasPermission("butterfly.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+    	$form->addButton("§l§dButterFly §aWing\n§rClick to use", 0, "textures/ui/unLock");
+	} else {
+    	$form->addButton("§l§dButterFly §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
+	}
     	$form->addButton("Reset Skin");
 	
         $form->addButton("Back Menu", 0,"textures/ui/arrow_left");
@@ -410,18 +438,6 @@ class Main extends PluginBase implements Listener {
     	$form->sendToPlayer($sender);
     	return $form;
     }
-    
-    public function Form($player) {
-    $form = new ModalForm(function (Player $sender, ?bool $data) {
-    });
-
-    $form->setTitle("Permission Denied");
-    $form->setContent("You Do Not Have Permission To Use This Skin");
-    $form->setButton1("OK");
-    $form->setButton2("Exit");
-
-    $player->sendForm($form);
-}
 
     public function ComboForm($player) {
 		$form = new SimpleForm(function(Player $player, $data = null) {
