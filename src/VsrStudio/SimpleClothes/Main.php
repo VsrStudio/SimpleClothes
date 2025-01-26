@@ -452,7 +452,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
 			break;
 			case 1;
@@ -461,7 +461,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk1");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
 			break;
             case 2;
@@ -470,7 +470,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "combopk2");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
             break;
 			case 3;
@@ -482,17 +482,17 @@ class Main extends PluginBase implements Listener {
 		});
 		$form->setTitle("§eComboForm");
 		$form->setContent("Select combo wing");
-	        if($sender->hasPermission("combopk.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("combopk.wing") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
     	        $form->addButton("§l§eGolden §aWing\n§rClick to use", 0, "textures/ui/unLock");
 	        } else {
     	        $form->addButton("§l§eGolden §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
 	        }
-	        if($sender->hasPermission("combopk1.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("combopk1.wing") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
     	        $form->addButton("§l§bBlue §aWing\n§rClick to use", 0, "textures/ui/unLock");
 	        } else {
     	        $form->addButton("§l§bBlue §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
 	        }
-	        if($sender->hasPermission("combopk2.wing") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("combopk2.wing") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
         	$form->addButton("§l§eGolden§bBlue §aWing\n§rClick to use", 0, "textures/ui/unLock");
         	} else {
           	$form->addButton("§l§eGolden§bBlue §aWing\n§r§cYou need permission!", 0, "textures/ui/lock");
@@ -515,7 +515,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "tv");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
 			break;
 			case 1;
@@ -524,7 +524,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "frog");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
 			break;
                         case 2;
@@ -533,7 +533,7 @@ class Main extends PluginBase implements Listener {
     			    $setskin = new setSkin();
     			    $setskin->setSkin($player, "melon");
     			  } else {
-    			    $this->WForm($sender, TextFormat::RED . "You dont have Permission to Use This Wing");
+    			    $this->WForm($player, TextFormat::RED . "You dont have Permission to Use This Wing");
     			  }
                         break;
 			case 3;
@@ -548,17 +548,17 @@ class Main extends PluginBase implements Listener {
 		});
 		$form->setTitle("§eHats");
 		$form->setContent("Select your hats");
-	        if($sender->hasPermission("tv.hats") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("tv.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
         	$form->addButton("§l§bTv §aHats\n§rClick to use", 0, "textures/ui/unLock");
 	        } else {
         	$form->addButton("§l§bTv §aHats\n§r§cYou need permission!", 0, "textures/ui/lock");
         	}
-	        if($sender->hasPermission("frog.hats") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("frog.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
          	$form->addButton("§l§bFrog §aHats\n§rClick to use", 0, "textures/ui/unLock");
         	} else {
           	$form->addButton("§l§bFrog §aHats\n§r§cYou need permission!", 0, "textures/ui/lock");
         	}
-	        if($sender->hasPermission("melon.hats") or $sender->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
+	        if($player->hasPermission("melon.hats") or $player->hasPermission(DefaultPermissions::ROOT_OPERATOR)){
          	$form->addButton("§l§bMelon §aHats\n§rClick to use", 0, "textures/ui/unLock");
         	} else {
          	$form->addButton("§l§bMelon §aHats\n§r§cYou need permission!", 0, "textures/ui/lock");
