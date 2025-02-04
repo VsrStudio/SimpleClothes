@@ -10,3 +10,62 @@ skin-resetted: §aYour Skin has been resetted!
 cape-on: §aYou activated the {name}-Cape!
 
 standard_capes: ["Blue_Creeper", "Enderman", "Energy", "Fire", "Red_Creeper", "Turtle", "Pickaxe", "Firework", "Iron_Golem", "Black", "Blue", "Red", "Purple", "Day Dream", "Chinema", "Fake Wings", "Darkblue L", "Orangest", "White Slash", "Black Butterfly", "Black L", "Double07", "Double07", "Eva", "Demon", "Aceee", "CawPe", "Snake"]
+
+# Particle
+Title: "§l7Togk Particle"
+Content: "§eEdit in config.yml!"
+
+1:
+  Particle:
+    Name: 1
+    Permission: "particle.flame"
+  Button:
+    Name: "§l§eFlame Particle\n§rTap To Use"
+2:
+  Particle:
+    Name: 2
+    Permission: "particle.entityflame"
+  Button:
+    Name: "§l§eFire Particle\n§rTap To Use"
+3:
+  Particle:
+    Name: 3
+    Permission: "particle.explode"
+  Button:
+    Name: "§l§eExplode Particle\n§rTap To Use"
+4:
+  Particle:
+    Name: 5
+    Permission: "particle.waterdrip"
+  Button:
+    Name: "§l§eWater Particle\n§rTap To Use"
+5:
+  Particle:
+    Name: 6
+    Permission: "particle.lava"
+  Button:
+    Name: "§l§eLava Particle\n§rTap To Use"
+6:
+  Particle:
+    Name: 8
+    Permission: "particle.heart"
+  Button:
+    Name: "§l§eHeart Particle\n§rTap To Use"
+7:
+  Particle:
+    Name: 9
+    Permission: "particle.angryvillager"
+  Button:
+    Name: "§l§eAngry Particle\n§rTap To Use"
+8:
+  Particle:
+    Name: 10
+    Permission: "particle.happyvillager"
+  Button:
+    Name: "§l§eHappy Particle\n§rTap To Use"
+9:
+  Particle:
+    Name: 16
+    Permission: "particle.snowball"
+  Button:
+    Name: "§l§eSnow Particle\n§rTap To Use"
