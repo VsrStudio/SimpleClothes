@@ -1,4 +1,4 @@
-# SimpleClothes
+# SimpleClothes 1.1.0
 This plugin is a clothing plugin like cosmetics, you could say it's more perfect.
 - This plugin will continue to be developed.
 - Not for sale
@@ -9,9 +9,9 @@ This plugin is a clothing plugin like cosmetics, you could say it's more perfect
 - Genshin Impact Skin Form - Have 2 Skin
 - Capes Form - Have 25 Skin
 - Hats Form - Have 3 Skin
+- Particle Form - Have 10 Particle
 
 # In Game
 **MenuForm**
-![MENU](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-162652.png)
-**PermissionForm**
-![PFORM](https://raw.githubusercontent.com/VsrStudio/SimpleClothes/refs/heads/main/Image/Screenshot_20250122-163032.png)
+![MENU](Image
+/Screenshot_20250122-162652.png)
