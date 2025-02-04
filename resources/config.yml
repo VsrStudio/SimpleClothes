@@ -12,8 +12,8 @@ cape-on: §aYou activated the {name}-Cape!
 standard_capes: ["Blue_Creeper", "Enderman", "Energy", "Fire", "Red_Creeper", "Turtle", "Pickaxe", "Firework", "Iron_Golem", "Black", "Blue", "Red", "Purple", "Day Dream", "Chinema", "Fake Wings", "Darkblue L", "Orangest", "White Slash", "Black Butterfly", "Black L", "Double07", "Double07", "Eva", "Demon", "Aceee", "CawPe", "Snake"]
 
 # Particle
-Title: "§l7Togk Particle"
-Content: "§eEdit in config.yml!"
+Title: "§lClothes Particle"
+Content: "§eSelect your particle!"
 
 1:
   Particle:
