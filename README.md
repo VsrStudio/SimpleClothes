@@ -13,5 +13,4 @@ This plugin is a clothing plugin like cosmetics, you could say it's more perfect
 
 # In Game
 **MenuForm**
-![MENU](Image
-/Screenshot_20250122-162652.png)
+![MENU](Image/Screenshot_20250122-162652.png)
