@@ -1,9 +1,0 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/VsrStudio/SimpleClothes
-build-by-default: true
-branches:
-- main
-projects:
-  SimpleClothes:
-    path: ""
-    icon: "icon.png"
-...
