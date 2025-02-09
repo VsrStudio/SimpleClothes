@@ -93,7 +93,7 @@ class Main extends PluginBase implements Listener {
 	@mkdir($this->getDataFolder()."players/");
 
         $server = $this->getServer();
-        $server->getCommandMap()->register("particle", new Commands($this));
+        $server->getCommandMap()->register("simpleclothes", new Commands($this));
          //Unregister
          foreach($this->unregister as $disable){
           $commandMap = $this->getServer()->getCommandMap();
@@ -371,80 +371,80 @@ class Main extends PluginBase implements Listener {
       }
       
 
-      if($player->hasPermission("particle.portal")){
+      if($player->hasPermission("simpleclothes.portal")){
         $player->getWorld()->addParticle($vect, new PortalParticle($player)); 
       
     }
-      if($player->hasPermission("particle.flame")){
+      if($player->hasPermission("simpleclothes.flame")){
         $player->getWorld()->addParticle($vect, new FlameParticle($player)); 
       
     }
-      if($player->hasPermission("particle.entityflame")){
+      if($player->hasPermission("simpleclothes.entityflame")){
         $player->getWorld()->addParticle($vect, new EntityFlameParticle($player)); 
       
     } 
-      if($player->hasPermission("particle.explode")){
+      if($player->hasPermission("simpleclothes.explode")){
         $player->getWorld()->addParticle($vect, new ExplodeParticle($player)); 
       
     }
-      if($player->hasPermission("particle.water")){
+      if($player->hasPermission("simpleclothes.water")){
         $player->getWorld()->addParticle($vect, new WaterParticle($player)); 
       
     }
-      if($player->hasPermission("particle.waterdrip")){
+      if($player->hasPermission("simpleclothes.waterdrip")){
         $player->getWorld()->addParticle($vect, new WaterDripParticle($player)); 
       
     }
-      if($player->hasPermission("particle.lava")){
+      if($player->hasPermission("simpleclothes.lava")){
         $player->getWorld()->addParticle($vect, new LavaParticle($player)); 
       
     }
-      if($player->hasPermission("particle.lavadrip")){
+      if($player->hasPermission("simpleclothes.lavadrip")){
         $player->getWorld()->addParticle($vect, new LavaDripParticle($player)); 
       
     }
-      if($player->hasPermission("particle.heart")){
+      if($player->hasPermission("simpleclothes.heart")){
         $player->getWorld()->addParticle($vect, new HeartParticle(10, $player)); 
       
     }
-      if($player->hasPermission("particle.angryvillager")){
+      if($player->hasPermission("simpleclothes.angryvillager")){
         $player->getWorld()->addParticle($vect, new AngryVillagerParticle($player)); 
       
     }
-      if($player->hasPermission("particle.happyvillager")){
+      if($player->hasPermission("simpleclothes.happyvillager")){
         $player->getWorld()->addParticle($vect, new HappyVillagerParticle($player)); 
       
     }
-      if($player->hasPermission("particle.critical")){
+      if($player->hasPermission("simpleclothes.critical")){
         $player->getWorld()->addParticle($vect, new CriticalParticle($player)); 
       
     }
-      if($player->hasPermission("particle.enchanttable")){
+      if($player->hasPermission("simpleclothes.enchanttable")){
         $player->getWorld()->addParticle($vect, new EnchantmentTableParticle($player)); 
       
     }
-      if($player->hasPermission("particle.ink")){
+      if($player->hasPermission("simpleclothes.ink")){
         $player->getWorld()->addParticle($vect, new InkParticle($player)); 
       
     }
-      if($player->hasPermission("particle.spore")){
+      if($player->hasPermission("simpleclothes.spore")){
         $player->getWorld()->addParticle($vect, new SporeParticle($player)); 
       
     }
-      if($player->hasPermission("particle.smoke")){
+      if($player->hasPermission("simpleclothes.smoke")){
         $player->getWorld()->addParticle($vect, new SmokeParticle($player)); 
       
     } 
-      if($player->hasPermission("particle.snowball")){
+      if($player->hasPermission("simpleclothes.snowball")){
         $player->getWorld()->addParticle($vect, new SnowballPoofParticle($player)); 
       
     } 
-      if($player->hasPermission("particle.redstone")){
+      if($player->hasPermission("simpleclothes.redstone")){
         $player->getWorld()->addParticle($vect, new RedstoneParticle($player)); 
       
     } 
       
-      if($player->hasPermission("particle.floatingtxt")){
+      if($player->hasPermission("simpleclothes.floatingtxt")){
         $task = new Schelud($this, $player); 
         $this->getScheduler()->scheduleDelayedTask($task,1*5); // Counted in ticks (1 second = 20 ticks)
   } 
