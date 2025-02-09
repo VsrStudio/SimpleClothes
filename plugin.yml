@@ -3,7 +3,7 @@ api: 5.0.0
 version: 1.1.0
 main: VsrStudio\SimpleClothes\Main
 author: VsrStudio
-description: §bThis SimpleClothes Dont Sell Bro
+description: §bOpen SimpleClothes
 website: vsrstudio.web.id
 commands:
   simpleclothes:
@@ -13,41 +13,41 @@ commands:
 permissions:
   simpleclothes.use:
     default: true
-  particle.portal:
+  simpleclothes.portal:
     default: op
-  particle.flame:
+  simpleclothes.flame:
     default: op
-  particle.explode:
+  simpleclothes.explode:
     default: op
-  particle.entityflame:
+  simpleclothes.entityflame:
     default: op
-  particle.water:
+  simpleclothes.water:
     default: op
-  particle.waterdrip:
+  simpleclothes.waterdrip:
     default: op
-  particle.lava:
+  simpleclothes.lava:
     default: op
-  particle.lavadrip:
+  simpleclothes.lavadrip:
     default: op
-  particle.heart:
+  simpleclothes.heart:
     default: op
-  particle.angryvillager:
+  simpleclothes.angryvillager:
     default: op
-  particle.happyvillager:
+  simpleclothes.happyvillager:
     default: op
-  particle.critical:
+  simpleclothes.critical:
     default: op
-  particle.enchanttable:
+  simpleclothes.enchanttable:
     default: op
-  particle.ink:
+  simpleclothes.ink:
     default: op
-  particle.spore:
+  simpleclothes.spore:
     default: op
-  particle.smoke:
+  simpleclothes.smoke:
     default: op
-  particle.snowball:
+  simpleclothes.snowball:
     default: op
-  particle.redstone:
+  simpleclothes.redstone:
     default: op
-  particle.floatingtxt:
+  simpleclothes.floatingtxt:
     default: op
