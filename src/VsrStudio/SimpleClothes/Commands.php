@@ -24,7 +24,7 @@ class Commands extends Command implements PluginOwned{
 public $plugin;
 
     public function __construct(Main $plugin){
-		parent::__construct("particle", "Particle main command", "/pa [disable/enable]", ["pa"]);
+		parent::__construct("simpleclothes", "/pa [disable/enable]", ["pa"]);
 		$this->setPermission("simpleclothes.use");
 		
         $this->plugin = $plugin;
@@ -60,7 +60,7 @@ public $plugin;
           case "list":
             if(($this->plugin->getServer()->isOp($player->getName()) === true)){
               if(!isset($args[1])){
-                $player->sendMessage(TF::GREEN."|--------------------[VsrStudioClothes]--------------------|");
+                $player->sendMessage(TF::GREEN."|--------------------[SimpleClothes]--------------------|");
                 $player->sendMessage(TF::GOLD."To set, use /pa set <number>");
                 $player->sendMessage(TF::GREEN."0 - PortalParticle");
                 $player->sendMessage(TF::GREEN."1 - FlameParticle");
