@@ -24,7 +24,7 @@ class Commands extends Command implements PluginOwned{
 public $plugin;
 
     public function __construct(Main $plugin){
-		parent::__construct("simpleclothes", "/pa [disable/enable]", ["pa"]);
+		parent::__construct("simpleclothes", "Your description here", "/pa [disable/enable]", []);
 		$this->setPermission("simpleclothes.use");
 		
         $this->plugin = $plugin;
