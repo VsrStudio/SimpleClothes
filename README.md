@@ -1,4 +1,4 @@
-### SimpleClothes 1.1.0
+### SimpleClothes 1.2.0
 This plugin is a clothing plugin like cosmetics, you could say it's more perfect.
 - This plugin will continue to be developed.
 - Not for sale
@@ -8,7 +8,8 @@ This plugin is a clothing plugin like cosmetics, you could say it's more perfect
 - Add Mystery Crate
 - Add Scorehud Score `{simpleclothes.crate}` Show Key
 - Add Command rca and permission simpleclothes
-**ClothesForm**
+
+- **ClothesForm**
 - Wings Form - Have 8 Skin
 - Combo Wings Form - Have 3 Skin
 - Genshin Impact Skin Form - Have 2 Skin
