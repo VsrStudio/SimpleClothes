@@ -1,53 +1,87 @@
 name: SimpleClothes
 api: 5.0.0
-version: 1.1.0
+version: 1.2.0
 main: VsrStudio\SimpleClothes\Main
 author: VsrStudio
-description: §bOpen SimpleClothes
+description: §bThis SimpleClothes Dont Sell Bro
 website: vsrstudio.web.id
+softdepend: [EconomyAPI, ScoreHud]
 commands:
   simpleclothes:
     description: "§bOpen SimpleClothes"
     permission: simpleclothes.use
     aliases: [sc, clothes]
+  scshop:
+    description: "§bOpen SimpleClothes Shop"
+    permission: scshop.use
+  scmenu:
+    description: "§bOpen SimpleClothes Menu"
+    permission: scmenu.use
+  sccrate:
+    description: "§bOpen SimpleClothes Crate"
+    permission: sccrate.use
+  permission:
+    description: "Simpleclothes permission"
+    permission: permission.command
+  scrca:
+    description: "rca simpleclothes"
+    permission: scrca.command
 permissions:
   simpleclothes.use:
     default: true
-  simpleclothes.portal:
+  scshop.use:
+    default: true
+  scmenu.use:
+    default: true
+  sccrate.use:
+    default: true
+  setkey.command:
     default: op
-  simpleclothes.flame:
+  givekey.command:
     default: op
-  simpleclothes.explode:
+  takekey.command:
     default: op
-  simpleclothes.entityflame:
+  help.command:
+    default: true
+  permission.command:
     default: op
-  simpleclothes.water:
+  scrca.command:
     default: op
-  simpleclothes.waterdrip:
+  particle.portal:
     default: op
-  simpleclothes.lava:
+  particle.flame:
     default: op
-  simpleclothes.lavadrip:
+  particle.explode:
     default: op
-  simpleclothes.heart:
+  particle.entityflame:
     default: op
-  simpleclothes.angryvillager:
+  particle.water:
     default: op
-  simpleclothes.happyvillager:
+  particle.waterdrip:
     default: op
-  simpleclothes.critical:
+  particle.lava:
     default: op
-  simpleclothes.enchanttable:
+  particle.lavadrip:
     default: op
-  simpleclothes.ink:
+  particle.heart:
     default: op
-  simpleclothes.spore:
+  particle.angryvillager:
     default: op
-  simpleclothes.smoke:
+  particle.happyvillager:
     default: op
-  simpleclothes.snowball:
+  particle.critical:
     default: op
-  simpleclothes.redstone:
+  particle.enchanttable:
     default: op
-  simpleclothes.floatingtxt:
+  particle.ink:
+    default: op
+  particle.spore:
+    default: op
+  particle.smoke:
+    default: op
+  particle.snowball:
+    default: op
+  particle.redstone:
+    default: op
+  particle.floatingtxt:
     default: op
