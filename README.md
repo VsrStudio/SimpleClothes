@@ -17,25 +17,30 @@ This plugin is a clothing plugin like cosmetics, you could say it's more perfect
 - Hats Form - Have 3 Skin
 - Particle Form - Have 10 Particle
 
+### Dependencies
+- [InvMenu](https://github.com/Muqsit/InvMenu)
+- [ScoreHud](https://github.com/Ifera/ScoreHud)
+- [EconomyApi](https://github.com/ACM-PocketMine-MP/EconomyAPI)
+
 ### Commands
 - **/sccrate help**
 - -----[ SimpleClothes ]-----
-- /simpleclothes - §gOpen the clothes menu";
-- /clothes §7- §gAlias command clothes menu";
-- /sc §7- §gAlias command clothes menu";
+- /simpleclothes - Open the clothes menu";
+- /clothes - Alias command clothes menu";
+- /sc - Alias command clothes menu";
 - -----[ More Command ]-----
-- /scmenu §7- §gShow basic menu";
-- /scshop §7- §gOpen shop menu simpleclothes";
-- /sccrate §7- §gOpen crate menu simpleclothes";
-- /scrca §7- §gRca Simpleclothes";
-- /permission §7- §gPermission Simpleclothes";
+- /scmenu - Show basic menu";
+- /scshop - Open shop menu simpleclothes";
+- /sccrate - Open crate menu simpleclothes";
+- /scrca - Rca Simpleclothes";
+- /permission - Permission Simpleclothes";
 - -----[ Crate ]-----
-- /sccrate help - §gshow help command simpleclothes";
-- /sccrate setkey - §gsetkey crate simpleclothes";
-- /sccrate givekey §7- §ggivekey crate simpleclothes";
-- /sccrate takekey §7- §gtakekey crate simpleclothes";
-- /sccrate spawncrate §7- §gspawn crate simpleclothes";
-- /sccrate removecrate §7- §gremove crate simpleclothes";
+- /sccrate help - show help command simpleclothes";
+- /sccrate setkey - setkey crate simpleclothes";
+- /sccrate givekey - givekey crate simpleclothes";
+- /sccrate takekey - takekey crate simpleclothes";
+- /sccrate spawncrate - spawn crate simpleclothes";
+- /sccrate removecrate - remove crate simpleclothes";
 
 ### Configuration
 **Crate**
