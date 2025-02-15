@@ -73,20 +73,20 @@ Content: "§eSelect your particle"
 # Crate
 form.menu:
   title: "Crate"
-  content: "Kamu memiliki §a{KEY} §fkey" #<=
+  content: "You have §a{KEY} §fkey" #<=
   open.crate:
     button.name: "Open Crate"
   open.keyshop:
     button.name: "Key Shop"
   exit.menu:
-    button.name: "§l§cKELUAR"
+    button.name: "§l§cEXIT"
 
 #Setting reward and message.
 #Add permission gift command:
 # /sccrate help show all command
 # permission add {player} pastepermission
 # scrca {player} permission add {player} pastepermission
-reward-message: "§l§eSELAMAT\n§r§7Kamu mendapatkan §r§a"
+reward-message: "§l§aCONGRATULATIONS\n§r§7You got §r§a"
 reward:
   - name: "§l§e1000 Money"
     commands:
@@ -102,7 +102,7 @@ reward:
       - "give {player} emerald 10"
   - name: "§l§e+ 1 Key"
     commands:
-      - "uicrate givekey {player} 1"
+      - "sccrate givekey {player} 1"
   - name: "§l§e5000 Money"
     commands:
       - "givemoney {player} 5000"
