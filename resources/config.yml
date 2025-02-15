@@ -12,8 +12,8 @@ cape-on: §aYou activated the {name}-Cape!
 standard_capes: ["Blue_Creeper", "Enderman", "Energy", "Fire", "Red_Creeper", "Turtle", "Pickaxe", "Firework", "Iron_Golem", "Black", "Blue", "Red", "Purple", "Day Dream", "Chinema", "Fake Wings", "Darkblue L", "Orangest", "White Slash", "Black Butterfly", "Black L", "Double07", "Double07", "Eva", "Demon", "Aceee", "CawPe", "Snake"]
 
 # Particle
-Title: "§lParticle Menu"
-Content: "§eSelect your particle!"
+Title: "§lSimple Clothes Particle"
+Content: "§eSelect your particle"
 
 1:
   Particle:
@@ -69,3 +69,65 @@ Content: "§eSelect your particle!"
     Permission: "particle.snowball"
   Button:
     Name: "§l§eSnow Particle\n§rTap To Use"
+
+# Crate
+form.menu:
+  title: "Crate"
+  content: "Kamu memiliki §a{KEY} §fkey" #<=
+  open.crate:
+    button.name: "Open Crate"
+  open.keyshop:
+    button.name: "Key Shop"
+  exit.menu:
+    button.name: "§l§cKELUAR"
+
+#Setting reward and message.
+#Add permission gift command:
+# /sccrate help show all command
+# permission add {player} pastepermission
+# scrca {player} permission add {player} pastepermission
+reward-message: "§l§eSELAMAT\n§r§7Kamu mendapatkan §r§a"
+reward:
+  - name: "§l§e1000 Money"
+    commands:
+      - "givemoney {player} 1000"
+  - name: "§l§e20 Diamonds"
+    commands:
+      - "give {player} diamond 20"
+  - name: "§l§e32 Iron Ingot"
+    commands:
+      - "give {player} iron_ingot 32"
+  - name: "§l§e10 Emerald"
+    commands:
+      - "give {player} emerald 10"
+  - name: "§l§e+ 1 Key"
+    commands:
+      - "uicrate givekey {player} 1"
+  - name: "§l§e5000 Money"
+    commands:
+      - "givemoney {player} 5000"
+  - name: "§l§e64 Wheat"
+    commands:
+      - "give {player} wheat 64"
+  - name: "§l§e32 Potato"
+    commands:
+      - "give {player} potato 32"
+  - name: "§l§e25 Carrot"
+    commands:
+      - "give {player} carrot 25"
+
+# Paste Permission Here
+# Shop
+shop:
+  wings:
+    "demon.wing": 1000
+    "kagune.wing": 1500
+  capes:
+    "Aceee.cape": 5000
+    "CawPe.cape": 10000
+  hats:
+    "tv.hats": 2000
+    "frog.hats": 2500
+  particles:
+    "particle.flame": 1200
+    "particle.lava": 1800
