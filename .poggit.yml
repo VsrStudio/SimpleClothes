@@ -6,4 +6,8 @@ projects:
   SimpleClothes:
     path: ""
     icon: "icon.png"
+    libs:
+      - src: muqsit/InvMenu/InvMenu
+        branch: pm5
+        version: ^4.6.5
 ...
