@@ -42,7 +42,7 @@ permissions:
   takekey.command:
     default: op
   help.command:
-    default: true
+    default: false
   permission.command:
     default: op
   scrca.command:
