@@ -249,15 +249,15 @@ class Main extends PluginBase implements Listener {
             case "simpleclothes":
                 $this->MenuForm($sender);
                 return true;
-            case "simpleclothesshop":
+            case "scshop":
                 $shop = new Shop($this);
                 $shop->ShopForm($sender);
                 return true;
-            case "simpleclothesmenu":
+            case "scmenu":
                 $this->BasicMenu($sender);
                 return true;
-            case "simpleclothesrca":
-                if (!$sender->hasPermission("scrca.command")) {
+            case "scrca":
+                if (!$sender->hasPermission("simpleclothes.rca")) {
                     $sender->sendMessage("§cYou don't have permission to use this command.");
                     return true;
                 }
@@ -276,7 +276,7 @@ class Main extends PluginBase implements Listener {
                 $sender->sendMessage("§aSuccessfully executed command for §b{$player->getName()}§a: §e/{$command}");
             return true;
             case "permission":
-                if (!$sender->hasPermission("permission.command")) {
+                if (!$sender->hasPermission("simpleclothes.permission")) {
                     $sender->sendMessage("§cYou don't have permission to use this command.");
                     break;
                 }
@@ -351,7 +351,7 @@ class Main extends PluginBase implements Listener {
             $sender->sendMessage("§cInvalid sub-command. Use /permission <add|remove|list> <player> [permission]");
             return true;
             }
-            case "simpleclothescrate":
+            case "sccrate":
             if(!isset($args[0])){
                 $this->openUI($sender);
                 break;
