@@ -3,7 +3,7 @@ api: 5.0.0
 version: 1.2.0
 main: VsrStudio\SimpleClothes\Main
 author: VsrStudio
-description: §bThis SimpleClothes Dont Sell Bro
+description: §bSimpleClothes like cosmetic
 website: vsrstudio.web.id
 softdepend: [EconomyAPI, ScoreHud]
 commands:
