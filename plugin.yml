@@ -29,20 +29,20 @@ commands:
 permissions:
   simpleclothes.use:
     default: true
-  simpleclothes.use:
+  simpleclothes.shop:
     default: true
-  simpleclothes.use:
+  simpleclothes.menu:
     default: true
-  simpleclothes.use:
+  simpleclothes.crate:
     default: true
-  setkey.command:
+  simpleclothes.setkey:
     default: op
-  givekey.command:
+  simpleclothes.givekey:
     default: op
-  takekey.command:
+  simpleclothes.takekey:
     default: op
-  help.command:
-    default: false
+  simpleclothes.help:
+    default: op
   simpleclothes.permission:
     default: op
   simpleclothes.rca:
