@@ -360,7 +360,7 @@ class Main extends PluginBase implements Listener {
             $noperm = "§cKamu tidak memiliki izin untuk menggunakan perintah";
             switch ($args[0]) {
                 case "setkey":
-                    if (!$sender->hasPermission("setkey.command")) {
+                    if (!$sender->hasPermission("simpleclothes.setkey")) {
                         $sender->sendMessage($noperm);
                         break;
                     }
@@ -377,7 +377,7 @@ class Main extends PluginBase implements Listener {
                     }
                     break;
                 case "givekey":
-                    if (!$sender->hasPermission("givekey.command")) {
+                    if (!$sender->hasPermission("simpleclothes.givekey")) {
                         $sender->sendMessage($noperm);
                         break;
                     }
@@ -394,7 +394,7 @@ class Main extends PluginBase implements Listener {
                     }
                     break;
                 case "takekey":
-                    if (!$sender->hasPermission("takekey.command")) {$sender->sendMessage($noperm);
+                    if (!$sender->hasPermission("simpleclothes.takekey")) {$sender->sendMessage($noperm);
                     break;
                     }
                     if (empty($args[1]) || empty($args[2])) {
@@ -440,7 +440,7 @@ class Main extends PluginBase implements Listener {
                 }
                 break;
                 case "help":
-                    if ($sender->hasPermission("help.command")) {
+                    if ($sender->hasPermission("simpleclothes.help")) {
                         $this->getHelp($sender);
                     } else { 
                         $sender->sendMessage($noperm);
