@@ -13,27 +13,27 @@ commands:
     aliases: [sc, clothes]
   scshop:
     description: "§bOpen SimpleClothes Shop"
-    permission: scshop.use
+    permission: simpleclothes.shop
   scmenu:
     description: "§bOpen SimpleClothes Menu"
-    permission: scmenu.use
+    permission: simpleclothes.menu
   sccrate:
     description: "§bOpen SimpleClothes Crate"
-    permission: sccrate.use
+    permission: simpleclothes.crate
   permission:
     description: "Simpleclothes permission"
-    permission: permission.command
+    permission: simpleclothes.permission
   scrca:
     description: "rca simpleclothes"
-    permission: scrca.command
+    permission: simpleclothes.rca
 permissions:
   simpleclothes.use:
     default: true
-  scshop.use:
+  simpleclothes.use:
     default: true
-  scmenu.use:
+  simpleclothes.use:
     default: true
-  sccrate.use:
+  simpleclothes.use:
     default: true
   setkey.command:
     default: op
@@ -43,9 +43,9 @@ permissions:
     default: op
   help.command:
     default: false
-  permission.command:
+  simpleclothes.permission:
     default: op
-  scrca.command:
+  simpleclothes.rca:
     default: op
   simpleclothes.portal:
     default: op
