@@ -8,7 +8,7 @@ website: vsrstudio.web.id
 softdepend: [EconomyAPI, ScoreHud]
 commands:
   simpleclothes:
-    description: "§bOpen SimpleClothes"
+    description: "§bOpen SimpleClothes Cosmetic"
     permission: simpleclothes.use
     aliases: [sc, clothes]
   scshop:
