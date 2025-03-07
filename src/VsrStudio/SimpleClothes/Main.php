@@ -109,7 +109,7 @@ class Main extends PluginBase implements Listener {
         }
 
         $server = $this->getServer();
-        $server->getCommandMap()->register("particle", new Commands($this));
+        $server->getCommandMap()->register("simpleclothes", new Commands($this));
          //Unregister
          foreach($this->unregister as $disable){
           $commandMap = $this->getServer()->getCommandMap();
